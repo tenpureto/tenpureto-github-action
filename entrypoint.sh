@@ -16,6 +16,5 @@ case "$1" in
             --pull-request \
             --pull-request-label ${AUTOMERGE_LABEL} \
             --pull-request-assignee ${GITHUB_ACTOR} \
-            --unattended \
-            --debug
+            --unattended
 esac
