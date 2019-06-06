@@ -14,7 +14,7 @@ case "$1" in
             --template https://github.com/${GITHUB_REPOSITORY}.git  \
             --branch ${GITHUB_REF#refs/heads/} \
             --pull-request \
-            --pull-request-label ${AUTOMERGE_LABEL} \
+            $([[ -z "${PULL_REQUEST_LABEL}" ]] && true || echo "--pull-request-label ${PULL_REQUEST_LABEL}") \
             --pull-request-assignee ${GITHUB_ACTOR} \
             --unattended
 esac
