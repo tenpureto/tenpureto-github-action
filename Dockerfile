@@ -26,6 +26,8 @@ LABEL "repository"="https://github.com/rtimush/tenpureto"
 LABEL "homepage"="https://github.com/rtimush/tenpureto"
 LABEL "maintainer"="Roman Timushev <rtimush@gmail.com>"
 
+ENV PULL_REQUEST_LABEL=""
+
 ADD entrypoint.sh /usr/local/bin/
 ADD hub /usr/local/bin/
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
