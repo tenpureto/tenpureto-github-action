@@ -17,6 +17,9 @@ RUN echo "deb https://dl.bintray.com/tenpureto/deb-snapshots buster main" >> /et
     apt-get install -y tenpureto=${TENPURETO_VERSION}-buster && \
     rm -rf /var/lib/apt/lists/*
 
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
 LABEL "com.github.actions.name"="Tenpureto"
 LABEL "com.github.actions.description"="Tenpureto templates automation"
 LABEL "com.github.actions.icon"="git-merge"
