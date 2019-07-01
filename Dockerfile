@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y curl gnupg2 && \
     rm -rf /var/lib/apt/lists/*
 
-ENV HUB_VERSION=2.11.2
+ENV HUB_VERSION=2.12.1
 RUN mkdir /tmp/hub && \
     (curl -SL https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | tar --strip 1 -zxC /tmp/hub) && \
     prefix=/usr /tmp/hub/install && \
