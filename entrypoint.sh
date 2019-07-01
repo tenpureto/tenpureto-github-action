@@ -10,7 +10,7 @@ case "$1" in
         echo "- user: github-actions"         >> ~/.config/hub
         echo "  oauth_token: ${GITHUB_TOKEN}" >> ~/.config/hub
         echo "  protocol: https"              >> ~/.config/hub
-        tenpureto template propagate-branch-changes \
+        tenpureto template propagate-changes \
             --template https://github.com/${GITHUB_REPOSITORY}.git  \
             --branch ${GITHUB_REF#refs/heads/} \
             --pull-request \
