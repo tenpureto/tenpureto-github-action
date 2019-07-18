@@ -11,5 +11,6 @@ case "$1" in
         if hub api "/users/${GITHUB_ACTOR}" >/dev/null; then
             ARGS+=(--pull-request-assignee "${GITHUB_ACTOR}")
         fi
+        echo Running tenpureto template propagate-changes "${ARGS[@]}"
         tenpureto template propagate-changes "${ARGS[@]}"
 esac
