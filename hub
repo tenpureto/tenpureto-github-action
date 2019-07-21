@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-GITHUB_TOKEN= /usr/bin/hub "$@"

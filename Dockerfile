@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y curl gnupg2 && \
     rm -rf /var/lib/apt/lists/*
 
-ENV HUB_VERSION=2.12.1
+ENV HUB_VERSION=2.12.3
 RUN mkdir /tmp/hub && \
     (curl -SL https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | tar --strip 1 -zxC /tmp/hub) && \
     prefix=/usr /tmp/hub/install && \
@@ -20,6 +20,9 @@ RUN echo "deb https://dl.bintray.com/tenpureto/deb-snapshots buster main" >> /et
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
+ENV HUB_PROTOCOL=https
+ENV GITHUB_USER=github-actions
+
 LABEL "com.github.actions.name"="Tenpureto"
 LABEL "com.github.actions.description"="Tenpureto templates automation"
 LABEL "com.github.actions.icon"="git-merge"
@@ -32,5 +35,4 @@ LABEL "maintainer"="Roman Timushev <rtimush@gmail.com>"
 ENV PULL_REQUEST_LABEL=""
 
 ADD entrypoint.sh /usr/local/bin/
-ADD hub /usr/local/bin/
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
