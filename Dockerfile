@@ -21,7 +21,11 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
 ENV HUB_PROTOCOL=https
-ENV GITHUB_USER=github-actions
+ENV GITHUB_USER=github-action
+ENV GIT_AUTHOR_NAME=Tenpureto
+ENV GIT_AUTHOR_EMAIL=github-action@tenpureto.org
+ENV GIT_COMMITTER_NAME=Tenpureto
+ENV GIT_COMMITTER_EMAIL=github-action@tenpureto.org
 
 LABEL "com.github.actions.name"="Tenpureto"
 LABEL "com.github.actions.description"="Tenpureto templates automation"
