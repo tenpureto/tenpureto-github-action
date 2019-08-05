@@ -10,7 +10,7 @@ RUN mkdir /tmp/hub && \
     prefix=/usr /tmp/hub/install && \
     rm -rf /tmp/hub
 
-ENV TENPURETO_VERSION=0.2.3
+ENV TENPURETO_VERSION=0.3.0
 RUN echo "deb https://dl.bintray.com/tenpureto/deb-snapshots buster main" >> /etc/apt/sources.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 && \
     apt-get update && \
