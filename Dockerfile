@@ -38,5 +38,8 @@ LABEL "maintainer"="Roman Timushev <rtimush@gmail.com>"
 
 ENV PULL_REQUEST_LABEL=""
 
-ADD entrypoint.sh /usr/local/bin/
+ADD *.sh /usr/local/bin/
+
+ENV GIT_ASKPASS="/usr/local/bin/askpass.sh"
+
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
