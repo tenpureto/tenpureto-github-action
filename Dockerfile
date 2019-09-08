@@ -32,8 +32,8 @@ LABEL "com.github.actions.description"="Tenpureto templates automation"
 LABEL "com.github.actions.icon"="git-merge"
 LABEL "com.github.actions.color"="blue"
 
-LABEL "repository"="https://github.com/rtimush/tenpureto"
-LABEL "homepage"="https://github.com/rtimush/tenpureto"
+LABEL "repository"="https://github.com/tenpureto/tenpureto-github-action"
+LABEL "homepage"="http://tenpureto.org"
 LABEL "maintainer"="Roman Timushev <rtimush@gmail.com>"
 
 ENV PULL_REQUEST_LABEL=""
