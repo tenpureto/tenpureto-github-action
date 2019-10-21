@@ -4,13 +4,13 @@ RUN apt-get update && \
     apt-get install -y curl gnupg2 && \
     rm -rf /var/lib/apt/lists/*
 
-ENV HUB_VERSION=2.12.3
+ENV HUB_VERSION=2.12.8
 RUN mkdir /tmp/hub && \
     (curl -SL https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz | tar --strip 1 -zxC /tmp/hub) && \
     prefix=/usr /tmp/hub/install && \
     rm -rf /tmp/hub
 
-ENV TENPURETO_VERSION=0.3.0
+ENV TENPURETO_VERSION=0.4.0
 RUN echo "deb https://dl.bintray.com/tenpureto/deb-snapshots buster main" >> /etc/apt/sources.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 && \
     apt-get update && \
