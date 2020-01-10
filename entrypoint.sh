@@ -8,7 +8,7 @@ case "$1" in
         if [[ ! -z "${PULL_REQUEST_LABEL}" ]]; then
             ARGS+=(--pull-request-label "${PULL_REQUEST_LABEL}")
         fi
-        if hub api "/users/${GITHUB_ACTOR}" >/dev/null; then
+        if [[ "$(hub api "/users/${GITHUB_ACTOR}" | jq -r .type)" = "User" ]]; then
             ARGS+=(--pull-request-assignee "${GITHUB_ACTOR}")
         fi
         echo Running tenpureto template propagate-changes "${ARGS[@]}"

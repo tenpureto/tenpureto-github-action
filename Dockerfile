@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
 RUN apt-get update && \
-    apt-get install -y curl gnupg2 && \
+    apt-get install -y curl gnupg2 jq && \
     rm -rf /var/lib/apt/lists/*
 
 ENV HUB_VERSION=2.12.8
