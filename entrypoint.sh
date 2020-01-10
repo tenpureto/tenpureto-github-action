@@ -5,7 +5,7 @@ set -euo pipefail
 case "$1" in
     propagate)
         ARGS=(--template "https://github.com/${GITHUB_REPOSITORY}.git" --branch "${GITHUB_REF#refs/heads/}" --pull-request --unattended)
-        if [[ -z "${PULL_REQUEST_LABEL}" ]]; then
+        if [[ ! -z "${PULL_REQUEST_LABEL}" ]]; then
             ARGS+=(--pull-request-label "${PULL_REQUEST_LABEL}")
         fi
         if hub api "/users/${GITHUB_ACTOR}" >/dev/null; then
